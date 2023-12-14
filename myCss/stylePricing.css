@@ -1,0 +1,17 @@
+.myInnerP {
+    padding-left: 10% !important;
+}
+
+.addBG {
+    background: '/myAssets/bgPricing.jpg';
+}
+
+.myUL {
+    margin-right: 0 !important;
+    text-align: left !important;
+}
+
+.myCardBOX>.card-body {
+    padding: 10px 10px !important;
+    /* text-align: left !important; */
+}
