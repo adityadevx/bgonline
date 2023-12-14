@@ -1,0 +1,140 @@
+@media only screen and (max-device-width: 768px) {
+
+    #overlay {
+        display: none;
+        width: 100%;
+        height: 100vh;
+        background: #00000076;
+        z-index: 1;
+        position: absolute;
+        margin-top: -60%;
+    }
+
+    .mainCon {
+        background: #fff !important;
+    }
+
+    .bgCss {
+        z-index: inherit;
+        width: 2000px;
+        margin-left: 5% !important;
+    }
+
+    .diplomaCss {
+        z-index: inherit;
+        width: 40%;
+        margin-left: 10% !important;
+    }
+
+    .marquee2 {
+        z-index: 2;
+        margin-top: 66% !important;
+    }
+
+    .mainText {
+        font-family: 'chopin' !important;
+        font-size: 3rem !important;
+        color: #ffb700 !important;
+        /* text-shadow: 0 0 20px #fff !important; */
+    }
+
+    .myBack {
+        margin-top: 90px;
+        width: 60% !important;
+        height: 100% !important;
+    }
+
+    /* BG TEXT on the top */
+    .bgCss {
+        width: 70%;
+        margin-left: 0% !important;
+        margin-top: -38% !important;
+    }
+
+
+    .diplomaCss {
+        width: 48%;
+        margin-top: -25% !important;
+        margin-left: 20% !important;
+    }
+
+    .chapterCss {
+        /* font-family: 'chopin' !important; */
+        color: #b3b3b3 !important;
+        font-size: 0.8rem !important;
+        margin-top: -18% !important;
+        margin-left: 12% !important;
+    }
+
+    .stayFree {
+        /* display: none; */
+        width: 68%;
+        margin-top: -12% !important;
+        margin-left: 0% !important;
+    }
+
+    table,
+    th,
+    thead,
+    tr,
+    tbody,
+    td {
+        border: 0 !important;
+        outline: 0 !important;
+        text-shadow: 0 !important;
+    }
+
+    td, tr, th{
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .makeThisSmall{
+        width: 20% !important;
+    }
+
+
+
+    .newTable>tr>td,
+    th {
+        padding: 0 !important;
+        margin: 0 !important;
+        text-shadow: 0 !important;
+        box-shadow: 0 !important;
+        font-size: 0.7rem !important;
+    }
+
+    .newTable>tr>th,
+    td {
+        padding: 0 !important;
+        margin: 0 !important;
+        /* padding: 6px 14px !important; */
+        text-shadow: 0 !important;
+        box-shadow: 0 !important;
+        font-size: 0.7rem !important;
+    }
+
+    .boxContent {
+        width: 55%;
+        margin-top: -1% !important;
+        margin-left: 2% !important;
+    }
+
+    .iconBox {
+        width: 70% !important;
+    }
+
+    .smalltxt {
+        margin-top: 10% !important;
+        text-shadow: none !important;
+        font-size: 1rem !important;
+        line-break: auto;
+        font-size: 0.9rem !important;
+        line-height: 0.9rem !important;
+    }
+
+    .registerNowBTN {
+        opacity: 1 !important;
+    }
+
+}
