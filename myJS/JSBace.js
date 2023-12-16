@@ -60,7 +60,7 @@ $(document).ready(
 
                 }
 
-                setInterval(marquee_right, 20);
+                setInterval(marquee_right, 35);
 
             }
 
