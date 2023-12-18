@@ -11,6 +11,11 @@
     display: block;
 }
 
+.entry-featured-image-url > img{
+    width: 100% !important;
+    height: 300px !important;
+}
+
 .myBack {
     text-align: right;
     float: right;
