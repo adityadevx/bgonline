@@ -713,8 +713,7 @@
                             <ul class="header-nav header-nav-main nav nav-right  nav-uppercase">
                                 <li class="html header-button-1">
                                     <div class="header-button">
-                                        <a href="#" class="button primary is-large"
-                                            style="border-radius:99px;">
+                                        <a href="/" class="button primary is-large" style="border-radius:99px;">
                                             <!-- <span style="padding: 10px;">+91 9310269713</span> -->
                                             <span style="padding: 10px;">Go Back</span>
                                         </a>
@@ -728,9 +727,9 @@
                             <ul class="mobile-nav nav nav-right ">
                                 <li class="html header-button-1">
                                     <div class="header-button">
-                                        <a href="tel:+919310269713" class="button primary is-large"
+                                        <a href="/" class="button primary is-large"
                                             style="border-radius:99px;">
-                                            <span>+91 9310269713</span>
+                                            <span>GO BACK</span>
                                         </a>
                                     </div>
                                 </li>
@@ -3429,30 +3428,30 @@
                                                             class="input-text " name="billing_email" id="billing_email"
                                                             placeholder="" value="" data-type="email"
                                                             autocomplete="email username"></span></p>
-                                                            
+
+
+
                                                 <div class="form-row form-row-wide    " id="billing__field"
                                                     data-priority="110">
                                                     <h4 class="awcfe_header_field " data-type="header" id="billing_">
                                                         _______________</h4>
                                                 </div>
-                                                <p class="form-row awcfe_toggleSwitch_field form-row-wide awcfe_condField  awcfe_has_rules awcfe_cl_parent  awcfe_has_relation awcfe_has_rules awcfe_cl_parent awcfe_has_relation awcfe_condField"
+                                                <p class="form-row awcfe_toggledSwitch_field form-row-wide awcfe_condField  awcfe_has_rules awcfe_cl_parent  awcfe_has_relation awcfe_has_rules awcfe_cl_parent "
                                                     id="billing_receive_blessings_of_lord_krishna_field"
-                                                    data-priority="120"><label
-                                                        for="billing_receive_blessings_of_lord_krishna"
-                                                        class="awcfe-form-label"><span> Receive Blessings of Lord
-                                                            Krishna</span>&nbsp; </label><input type="checkbox"
-                                                        class="input-checkbox awcfe_cl_fields"
+                                                    data-priority="120">
+
+                                                    <input type="checkbox" class="input-checkbox awcfe_cl_fields"
                                                         name="billing_receive_blessings_of_lord_krishna" value="Yes"
-                                                        id="billing_receive_blessings_of_lord_krishna"
+                                                        checked id="billing_receive_blessings_of_lord_krishna"
                                                         data-rules="{&quot;rules&quot;:[{&quot;operator&quot;:false,&quot;rules&quot;:[{&quot;operator&quot;:false,&quot;rules&quot;:{&quot;cl_field&quot;:&quot;cart_category&quot;,&quot;cl_relation&quot;:&quot;is_in&quot;,&quot;cl_val&quot;:[31,39,34,35,36,37,38]}}]}],&quot;action&quot;:&quot;hide&quot;}"
                                                         data-related="[&quot;billing_select_gender1&quot;,&quot;billing_your_birthday2&quot;,&quot;billing_birthday&quot;,&quot;billing_your_birthday&quot;]"
-                                                        data-type="toggleSwitch"><label
-                                                        for="billing_receive_blessings_of_lord_krishna"
-                                                        class="awcfe-formToggle">Receive Blessings of Lord
-                                                        Krishna</label><span class="awcfe_show_description"
-                                                        id="billing_receive_blessings_of_lord_krishna-description"></span>
+                                                        data-type="toggleSwitch" style="visibility: hidden;">
+
+                                                    <span class="awcfe_show_description"
+                                                        id="billing_receive_blessings_of_lord_krishna-description">
+                                                    </span>
                                                 </p>
-                                                <p class="form-row awcfe_select_field form-row-wide awcfe_condField awcfe_has_rules awcfe_cl_parent awcfe_cl_hidden validate-required"
+                                                <p class="form-row awcfe_select_field form-row-wide awcfe_condField awcfe_has_rules awcfe_cl_parent  validate-required"
                                                     id="billing_select_gender1_field"><label
                                                         for="billing_select_gender1_field">Select Gender <abbr
                                                             class="required" title="required">*</abbr></label><span
@@ -3466,7 +3465,7 @@
                                                             <option value="female">Female</option>
                                                         </select><span class="awcfe_show_description"
                                                             id="billing_select_gender1-description"></span></span></p>
-                                                <p class="form-row form-row-wide awcfe_condField awcfe_has_rules awcfe_cl_parent awcfe_cl_hidden validate-required"
+                                                <p class="form-row form-row-wide awcfe_condField awcfe_has_rules awcfe_cl_parent validate-required"
                                                     id="billing_your_birthday2_field" data-priority="140"><label
                                                         for="billing_your_birthday2" class="">Your Birthday
                                                         (DD/MM/YYYY)&nbsp;<abbr class="required"
@@ -3663,7 +3662,7 @@
                                                     </table>
 
                                                     <div id="payment" class="woocommerce-checkout-payment">
-                                                        <ul class="wc_payment_methods payment_methods methods">
+                                                        <!-- <ul class="wc_payment_methods payment_methods methods">
                                                             <li
                                                                 class="wc_payment_method payment_method_pronamic_pay_upi">
                                                                 <input id="payment_method_pronamic_pay_upi" type="radio"
@@ -3751,7 +3750,7 @@
                                                                 <label for="payment_method_pronamic_pay_razorpay">
                                                                     Razorpay Online </label>
                                                             </li>
-                                                        </ul>
+                                                        </ul> -->
                                                         <div class="form-row place-order">
                                                             <noscript>
                                                                 Since your browser does not support JavaScript, or it is
@@ -3769,9 +3768,16 @@
                                                             </div>
 
 
-                                                            <button type="submit" class="button alt"
+                                                            <button type="button" class="button alt"
                                                                 name="woocommerce_checkout_place_order" id="place_order"
                                                                 value="Pay Now" data-value="Pay Now">Pay Now</button>
+
+                                                            <a href="#">
+                                                                <button type="button" class="button alt"
+                                                                    name="woocommerce_checkout_place_order"
+                                                                    id="place_order" value="Pay Now"
+                                                                    data-value="Pay Now">GO BACK</button>
+                                                            </a>
 
                                                             <input type="hidden" id="woocommerce-process-checkout-nonce"
                                                                 name="woocommerce-process-checkout-nonce"
@@ -3893,8 +3899,7 @@
 
                     <div class="footer-primary pull-left">
                         <div class="copyright-footer">
-                            <strong>Copyright 2023 © ISKCONDelhi.com ~ International Society for Krishna Consciousness |
-                                Hare Kṛṣṇa </strong>
+                            <strong>Copyright 2023 © Bhagavadgitaonlineclasses.com ~ |  Hare Kṛṣṇa </strong>
                         </div><strong>
                         </strong>
                     </div><strong>
@@ -3904,7 +3909,9 @@
             </div><strong>
 
             </strong>
-        </footer><strong>
+        </footer>
+        
+        <strong>
 
         </strong>
     </div><iframe allow="join-ad-interest-group" data-tagging-id="AW-347597089" data-load-time="1702985443102"
