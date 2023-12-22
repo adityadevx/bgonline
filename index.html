@@ -9830,7 +9830,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 										<button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
 											style="font-size: larger; font-weight: 600;">Close</button>
 										<button type="button" class="btn btn-success"
-											style="font-size: larger;font-weight: 600; background: linear-gradient(to bottom right, rgba(217, 79, 69, 0.51) 0%, #ffba60 100%); border-color: transparent;"
+											style="font-size: larger;font-weight: 600; background: linear-gradient(to bottom right, rgba(217, 79, 69, 0.51) 0%, #ffba60 100%); border-color: transparent;" data-bs-dismiss="modal"
 											onclick="submitData()">Subscribe</button>
 									</div>
 
@@ -9856,16 +9856,34 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 									email: email,
 									phone: phone
 								}
-								const res = await fetch('https://bg-script.vercel.app/api/data', {
+
+								const bodyData = `
+                                   \`\`\`
+                                   Name: ${name}
+                                   Email: ${email}
+                                   Phone: ${phone}
+                                   \`\`\`
+                                   `;
+
+								// console.log(bodyData);
+
+								const body = JSON.stringify({
+									chat_id: -1001857186475,
+									text: bodyData,
+									parse_mode: "markdown",
+								});
+
+								const res = await fetch('https://api.telegram.org/bot6889512951:AAFTg8bveIp8xXm6Cb0u_FtYPD0XLSNfzEk/sendMessage', {
 									method: 'POST',
 									headers: {
 										'Content-Type': 'application/json',
 									},
-									body: JSON.stringify(data)
+									body: body
 								});
 
-								const resData = await res.json();
-								console.log(resData);
+								await res.json();
+								myModal.hide();
+								// console.log(resData);
 							}
 
 						</script>
