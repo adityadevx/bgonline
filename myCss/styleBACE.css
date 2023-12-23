@@ -50,8 +50,8 @@
 }
 
 .bgCss {
-    /* margin-top: -4%; */
-    margin-left: 15%;
+    margin-top: -5%;
+    margin-left: 14%;
     width: 60%;
 }
 
@@ -79,14 +79,14 @@
 
 
 .diplomaCss {
-    margin-top: 11%;
+    margin-top: 6.5%;
     width: 30%;
     margin-left: 43%;
 }
 
 .boxContent {
     position: absolute;
-    margin-top: 10%;
+    margin-top: 6%;
     margin-left: 15%;
     text-align: left;
 }
@@ -102,8 +102,8 @@
 
 .chapterCss {
     color: rgba(111, 111, 111, 0) !important;
-    font-size: 2rem !important;
-    margin-top: 15%;
+    font-size: 1.7rem !important;
+    margin-top: 10%;
     width: 70%;
     /* font-family: 'Roboto'; */
     margin-left: 28%;
@@ -113,7 +113,7 @@
 .registerNowBTN {
     position: absolute !important;
     margin-left: 48% !important;
-    margin-top: 19% !important;
+    margin-top: 15% !important;
 }
 
 .registerNowBTN>.et_pb_button_module_wrapper>.et_pb_button {
@@ -209,9 +209,9 @@ div.fade-right {
 }
 
 .iconBox {
-    margin-top: 5px !important;
-    width: 50px;
-    height: 50px;
+    margin-top: 10px !important;
+    width: 45px;
+    height: 45px;
 }
 
 .boxContainers>span {
