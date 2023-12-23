@@ -9830,8 +9830,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 										<button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
 											style="font-size: larger; font-weight: 600;">Close</button>
 										<button type="button" class="btn btn-success"
-											style="font-size: larger;font-weight: 600; background: linear-gradient(to bottom right, rgba(217, 79, 69, 0.51) 0%, #ffba60 100%); border-color: transparent;" data-bs-dismiss="modal"
-											onclick="submitData()">Subscribe</button>
+											style="font-size: larger;font-weight: 600; background: linear-gradient(to bottom right, rgba(217, 79, 69, 0.51) 0%, #ffba60 100%); border-color: transparent;"
+											data-bs-dismiss="modal" onclick="submitData()">Subscribe</button>
 									</div>
 
 								</div>
@@ -9918,7 +9918,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
 
-										<div id="overlay"></div>
+										<!-- <div id="overlay"></div> -->
 
 										<span class="et_pb_section_video_bg   et_pb_video_play_outside_viewport">
 
@@ -10026,9 +10026,11 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 														</div>
 														<div class="fullWidth">
 															<div
+																style="z-index: 2000;"
 																class="et_pb_module et_pb_text et_clickable  et_pb_text_align_center et_pb_bg_layout_dark registerNowCircleBTN">
-																<div class="et_pb_text_inner">
-																	<p>Join Now</p>
+																<div onclick="location.replace('/register.php')" class="et_pb_text_inner">
+																	<p>Join
+																		Now</p>
 																	<div id="gtx-trans"
 																		style="position: absolute; left: 154px; top: 38px;">
 																		<div class="gtx-trans-icon"></div>
