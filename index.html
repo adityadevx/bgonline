@@ -9834,7 +9834,14 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 											data-bs-dismiss="modal" onclick="submitData()">Subscribe</button>
 									</div>
 
+									<script>
+
+
+
+									</script>
+
 								</div>
+
 							</div>
 						</div>
 
@@ -9845,46 +9852,75 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 						<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
 							integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
 							crossorigin="anonymous"></script>
-
 						<script>
 							async function submitData() {
 								var name = document.getElementById("exampleFormControlInput1").value;
 								var email = document.getElementById("exampleFormControlInput2").value;
 								var phone = document.getElementById("exampleFormControlInput3").value;
-								var data = {
+
+								if (!name || !email || !phone) return alert("Please fill all field !!!")
+
+								var data = JSON.stringify({
 									name: name,
 									email: email,
 									phone: phone
-								}
+								})
 
-								const bodyData = `
-                                   \`\`\`
-                                   Name: ${name}
-                                   Email: ${email}
-                                   Phone: ${phone}
-                                   \`\`\`
-                                   `;
-
-								// console.log(bodyData);
-
-								const body = JSON.stringify({
-									chat_id: -1001857186475,
-									text: bodyData,
-									parse_mode: "markdown",
-								});
-
-								const res = await fetch('https://api.telegram.org/bot6889512951:AAFTg8bveIp8xXm6Cb0u_FtYPD0XLSNfzEk/sendMessage', {
-									method: 'POST',
-									headers: {
-										'Content-Type': 'application/json',
+								$.ajax({
+									url: "<PLEASE ADD THE URL HERE>",
+									type: "POST",
+									data: data,
+									success: function (result) {
+										alert("SUBSCRIBED SUCCESSFULLY !!!")
 									},
-									body: body
+									error: function (xhr, status, error) {
+										alert("SOMETHING WENT WRONG !!!")
+									}
 								});
 
-								await res.json();
 								myModal.hide();
-								// console.log(resData);
 							}
+						</script>
+
+						<script>
+							// async function submitData() {
+							// 	var name = document.getElementById("exampleFormControlInput1").value;
+							// 	var email = document.getElementById("exampleFormControlInput2").value;
+							// 	var phone = document.getElementById("exampleFormControlInput3").value;
+							// 	var data = {
+							// 		name: name,
+							// 		email: email,
+							// 		phone: phone
+							// 	}
+
+							// 	const bodyData = `
+							//        \`\`\`
+							//        Name: ${name}
+							//        Email: ${email}
+							//        Phone: ${phone}
+							//        \`\`\`
+							//        `;
+
+							// 	// console.log(bodyData);
+
+							// 	const body = JSON.stringify({
+							// 		chat_id: -1001857186475,
+							// 		text: bodyData,
+							// 		parse_mode: "markdown",
+							// 	});
+
+							// 	const res = await fetch('https://api.telegram.org/bot6889512951:AAFTg8bveIp8xXm6Cb0u_FtYPD0XLSNfzEk/sendMessage', {
+							// 		method: 'POST',
+							// 		headers: {
+							// 			'Content-Type': 'application/json',
+							// 		},
+							// 		body: body
+							// 	});
+
+							// 	await res.json();
+							// 	myModal.hide();
+							// 	// console.log(resData);
+							// }
 
 						</script>
 
@@ -10025,10 +10061,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 															<img class="stayFree2 centerItems" src="myAssets/2nd.png" />
 														</div>
 														<div class="fullWidth">
-															<div
-																style="z-index: 2000;"
+															<div style="z-index: 2000;"
 																class="et_pb_module et_pb_text et_clickable  et_pb_text_align_center et_pb_bg_layout_dark registerNowCircleBTN">
-																<div onclick="location.replace('/register.php')" class="et_pb_text_inner">
+																<div onclick="location.replace('/register.php')"
+																	class="et_pb_text_inner">
 																	<p>Join
 																		Now</p>
 																	<div id="gtx-trans"
