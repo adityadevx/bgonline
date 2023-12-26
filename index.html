@@ -9786,7 +9786,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 			<div id="et-main-area">
 
 				<a href="https://wa.me/918076711168" target="_blank">
-					<img src="/myAssets/whatsapp_icon.png" alt="whatsapp_icon" width="80" height="80" style="position: fixed;right: 5px; bottom: 5px; z-index: 99999999;" class="shadow" id="fixedIcon">
+					<img src="/myAssets/whatsapp_icon.png" alt="whatsapp_icon" width="80" height="80"
+						style="position: fixed;right: 5px; bottom: 5px; z-index: 99999999;" class="shadow"
+						id="fixedIcon">
 				</a>
 				<div id="main-content">
 
@@ -9835,7 +9837,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 											style="font-size: larger; font-weight: 600;">Close</button>
 										<button type="button" class="btn btn-success"
 											style="font-size: larger;font-weight: 600; background: linear-gradient(to bottom right, rgba(217, 79, 69, 0.51) 0%, #ffba60 100%); border-color: transparent;"
-											 onclick="submitData()">Subscribe</button>
+											onclick="submitData()">Subscribe</button>
 									</div>
 
 									<script>
@@ -9864,25 +9866,39 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 								if (!name || !email || !phone) return alert("Please fill all field !!!")
 
-								
 
-								var data = JSON.stringify({
+
+								var data = {
 									name: name,
 									email: email,
 									phone: phone
+								}
+
+								const res = await fetch('https://script.google.com/macros/s/AKfycbxtWTcy6zp5ZvKWxoZ3H4WqMOcYavuJrgru42Xl6neu7z3hyPOMUHFrvC5PSJFu_OC1Ww/exec', {
+									method: 'POST',
+									headers: {
+										"Content-Type": "application/json"
+									},
+									body: JSON.stringify(data)
 								})
 
-								$.ajax({
-									url: "<PLEASE ADD THE URL HERE>",
-									type: "POST",
-									data: data,
-									success: function (result) {
-										alert("SUBSCRIBED SUCCESSFULLY !!!")
-									},
-									error: function (xhr, status, error) {
-										alert("SOMETHING WENT WRONG !!!")
-									}
-								});
+								const resdata = await res.json();
+								console.log(resdata);
+
+
+
+								// $.ajax({
+								// 	url: "https://script.google.com/macros/s/AKfycbxtWTcy6zp5ZvKWxoZ3H4WqMOcYavuJrgru42Xl6neu7z3hyPOMUHFrvC5PSJFu_OC1Ww/exec",
+								// 	type: "POST",
+								// 	dataType: JSON,
+								// 	data: data,
+								// 	success: function (result) {
+								// 		alert("SUBSCRIBED SUCCESSFULLY !!!")
+								// 	},
+								// 	error: function (xhr, status, error) {
+								// 		alert("SOMETHING WENT WRONG !!!")
+								// 	}
+								// });
 
 								myModal.hide();
 							}
