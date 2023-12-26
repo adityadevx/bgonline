@@ -9814,31 +9814,38 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 											style="font-family: 'Faustina' !important; font-weight: 500; font-size: xx-large;">
 											Join Now
 										</h3>
-										<div class="mb-3 px-2">
-											<label for="exampleFormControlInput1" class="form-label"
-												style="font-size: x-large;  font-family: 'Faustina' !important;">Name</label>
-											<input type="email" class="form-control" id="exampleFormControlInput1">
-										</div>
-										<div class="mb-3 px-2">
-											<label for="exampleFormControlInput2" class="form-label"
-												style="font-size: x-large;  font-family: 'Faustina' !important;">Email
-												address</label>
-											<input type="email" class="form-control" id="exampleFormControlInput2">
-										</div>
 
-										<div class="mb-2 px-2">
-											<label for="exampleFormControlInput3" class="form-label"
-												style="font-size: x-large;  font-family: 'Faustina' !important;">Phone</label>
-											<input type="email" class="form-control" id="exampleFormControlInput3">
-										</div>
-									</div>
-									<div class="d-flex justify-content-end m-2" style="gap: 3px;">
-										<button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+										<form action="" id="myForm">
+
+
+											<div class="mb-3 px-2">
+												<label for="exampleFormControlInput1" class="form-label"
+													style="font-size: x-large;  font-family: 'Faustina' !important;">Name</label>
+												<input type="text" class="form-control" id="exampleFormControlInput1"
+												style="border:1px solid #bbb;color: #4e4e4e;">
+											</div>
+											<div class="mb-3 px-2">
+												<label for="exampleFormControlInput2" class="form-label"
+													style="font-size: x-large;  font-family: 'Faustina' !important;">Email
+													address</label>
+												<input type="email" class="form-control" id="exampleFormControlInput2">
+											</div>
+
+											<div class="mb-2 px-2">
+												<label for="exampleFormControlInput3" class="form-label"
+													style="font-size: x-large;  font-family: 'Faustina' !important;">Phone</label>
+												<input type="tel" class="form-control" id="exampleFormControlInput3">
+											</div>
+									       </div>
+									      <div class="d-flex justify-content-end m-2" style="gap: 3px;">
+										 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
 											style="font-size: larger; font-weight: 600;">Close</button>
-										<button type="button" class="btn btn-success"
+										  <button type="submit" class="btn btn-success"
 											style="font-size: larger;font-weight: 600; background: linear-gradient(to bottom right, rgba(217, 79, 69, 0.51) 0%, #ffba60 100%); border-color: transparent;"
-											onclick="submitData()">Subscribe</button>
+											>Subscribe</button>
+								       </form>
 									</div>
+
 
 									<script>
 
@@ -9859,49 +9866,37 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 							integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
 							crossorigin="anonymous"></script>
 						<script>
-							async function submitData() {
-								var name = document.getElementById("exampleFormControlInput1").value;
-								var email = document.getElementById("exampleFormControlInput2").value;
-								var phone = document.getElementById("exampleFormControlInput3").value;
+							$(document).ready(function () {
+								$("#myForm").submit(function (e) {
+									e.preventDefault();
 
-								if (!name || !email || !phone) return alert("Please fill all field !!!")
+									const name = $("#exampleFormControlInput1").val();
+									const email = $("#exampleFormControlInput2").val();
+									const message = $("#exampleFormControlInput3").val();
 
+									// Prepare the data to be sent as an object
+									const formData = {
+										name: name,
+										email: email,
+										message: message,
+									};
 
-
-								var data = {
-									name: name,
-									email: email,
-									phone: phone
-								}
-
-								const res = await fetch('https://script.google.com/macros/s/AKfycbxtWTcy6zp5ZvKWxoZ3H4WqMOcYavuJrgru42Xl6neu7z3hyPOMUHFrvC5PSJFu_OC1Ww/exec', {
-									method: 'POST',
-									headers: {
-										"Content-Type": "application/json"
-									},
-									body: JSON.stringify(data)
-								})
-
-								const resdata = await res.json();
-								console.log(resdata);
-
-
-
-								// $.ajax({
-								// 	url: "https://script.google.com/macros/s/AKfycbxtWTcy6zp5ZvKWxoZ3H4WqMOcYavuJrgru42Xl6neu7z3hyPOMUHFrvC5PSJFu_OC1Ww/exec",
-								// 	type: "POST",
-								// 	dataType: JSON,
-								// 	data: data,
-								// 	success: function (result) {
-								// 		alert("SUBSCRIBED SUCCESSFULLY !!!")
-								// 	},
-								// 	error: function (xhr, status, error) {
-								// 		alert("SOMETHING WENT WRONG !!!")
-								// 	}
-								// });
-
-								myModal.hide();
-							}
+									// Send the form data to Google Apps Script via AJAX
+									$.ajax({
+										url: "https://script.google.com/macros/s/AKfycbxtWTcy6zp5ZvKWxoZ3H4WqMOcYavuJrgru42Xl6neu7z3hyPOMUHFrvC5PSJFu_OC1Ww/exec",
+										method: "POST",
+										dataType: "json",
+										data: formData,
+										success: function (response) {
+											console.log("Form data sent successfully!", response);
+											window.location.href ="/"
+										},
+										error: function (xhr, status, error) {
+											console.error("Error sending form data:", status, error);
+										},
+									});
+								});
+							});
 						</script>
 
 						<script>
