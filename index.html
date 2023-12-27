@@ -9787,8 +9787,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 				<a href="https://wa.me/918076711168" target="_blank">
 					<img src="/myAssets/whatsapp_icon.png" alt="whatsapp_icon" width="80" height="80"
-						style="position: fixed;right: 5px; bottom: 5px; z-index: 99999999;" class="shadow"
-						id="fixedIcon">
+						style="position: fixed;right: 20px; bottom: 20px; z-index: 99999999; text-shadow: 20px 0px 0px #000 !important;"
+						class="shadow" id="fixedIcon">
 				</a>
 				<div id="main-content">
 
@@ -9822,7 +9822,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 												<label for="exampleFormControlInput1" class="form-label"
 													style="font-size: x-large;  font-family: 'Faustina' !important;">Name</label>
 												<input type="text" class="form-control" id="exampleFormControlInput1"
-												style="border:1px solid #bbb;color: #4e4e4e;">
+													style="border:1px solid #bbb;color: #4e4e4e;">
 											</div>
 											<div class="mb-3 px-2">
 												<label for="exampleFormControlInput2" class="form-label"
@@ -9836,14 +9836,13 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 													style="font-size: x-large;  font-family: 'Faustina' !important;">Phone</label>
 												<input type="tel" class="form-control" id="exampleFormControlInput3">
 											</div>
-									       </div>
-									      <div class="d-flex justify-content-end m-2" style="gap: 3px;">
-										 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+									</div>
+									<div class="d-flex justify-content-end m-2" style="gap: 3px;">
+										<button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
 											style="font-size: larger; font-weight: 600;">Close</button>
-										  <button type="submit" class="btn btn-success"
-											style="font-size: larger;font-weight: 600; background: linear-gradient(to bottom right, rgba(217, 79, 69, 0.51) 0%, #ffba60 100%); border-color: transparent;"
-											>Subscribe</button>
-								       </form>
+										<button id="submitBTN" type="submit" class="btn btn-success"
+											style="font-size: larger;font-weight: 600; background: linear-gradient(to bottom right, rgba(217, 79, 69, 0.51) 0%, #ffba60 100%); border-color: transparent;">Submit</button>
+										</form>
 									</div>
 
 
@@ -9867,6 +9866,12 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 							crossorigin="anonymous"></script>
 						<script>
 							$(document).ready(function () {
+
+								var myModal = new bootstrap.Modal(document.getElementById('staticBackdrop'));
+								setTimeout(function () {
+									myModal.show();
+								}, 5000);
+
 								$("#myForm").submit(function (e) {
 									e.preventDefault();
 
@@ -9874,12 +9879,20 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 									const email = $("#exampleFormControlInput2").val();
 									const message = $("#exampleFormControlInput3").val();
 
+									if (!name || !email || !message) return alert("Empty Field !!!")
+
 									// Prepare the data to be sent as an object
 									const formData = {
 										name: name,
 										email: email,
-										message: message,
-									};
+										message: message
+									}
+
+
+									$('#submitBTN').prop({ "disabled": "true" })
+									$('#submitBTN').html("Submitting.")
+									$('#submitBTN').html("Submitting..")
+									$('#submitBTN').html("Submitting...")
 
 									// Send the form data to Google Apps Script via AJAX
 									$.ajax({
@@ -9888,14 +9901,20 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 										dataType: "json",
 										data: formData,
 										success: function (response) {
-											console.log("Form data sent successfully!", response);
-											window.location.href ="/"
+											// console.log("Form data sent successfully!", response);
+											// window.location.href ="/"
+											alert("Thanks for submitting, Our team will soon reach you out !!!")
+											$("#myForm")[0].reset()
+											myModal.hide()
+											$('#submitBTN').prop({ "disabled": "false" })
+
 										},
 										error: function (xhr, status, error) {
 											console.error("Error sending form data:", status, error);
 										},
-									});
-								});
+									})
+
+								})
 							});
 						</script>
 
@@ -9945,14 +9964,11 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
 
-						<script>
+						<!-- <script>
 							document.addEventListener('DOMContentLoaded', function () {
-								var myModal = new bootstrap.Modal(document.getElementById('staticBackdrop'));
-								setTimeout(function () {
-									myModal.show();
-								}, 5000);
+								
 							});
-						</script>
+						</script> -->
 
 
 
